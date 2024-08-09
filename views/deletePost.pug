@@ -1,0 +1,14 @@
+doctype html
+html
+head
+title=SchoolDiary
+body
+h2(style="text-align:left") All Posts
+p
+	ol
+		each post in posts
+			li
+				span= post
+				form(action="/posts/delete-post", method="post", style="display:inline;padding:10px")
+					input(type="hidden", name="description", value=post)
+					button(type="submit") Delete 

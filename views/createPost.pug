@@ -1,0 +1,16 @@
+extends layout 
+
+block content
+	div(style="text-align:left;background-color:lightgrey;width:40%;border:3px solid green;padding:50px;margin:auto;")
+		form(action='/createPost', method='POST', enctype='multipart/form-data')
+		
+			div.form-group(style="margin-bottom:20px")
+			label(for='description', style='display: block') Description: 
+			textarea(name='description', rows='10', cols='50', style='width: 100%')
+		
+			div.form-group(style="margin-bottom:20px")
+			label(for='image') Upload an image: 
+			input#image.form-control(type='file', name='image', accept='image/*')
+		
+			button(type="submit", name="action", value="save" , style=("display: block;width: 25%;border: none;background-color: #04AA6D;padding: 14px 28px;font-size: 16px;cursor: pointer;text-align: center;margin:10px")) Create post
+			button(type="submit", name="action", value="submit", style=("display: block;width: 25%;border: none;background-color: #04AA6D;padding: 14px 28px;font-size: 16px;cursor: pointer;text-align: center;margin:10px")) Cancel

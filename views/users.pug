@@ -1,0 +1,14 @@
+doctype html
+html
+head
+title=SchoolDiary
+body
+h2(style="text-align:left") All Users
+p
+	ol
+		each user in users
+			li
+				span= user
+				form(action="/users/delete-user", method="post", style="display:inline;padding:10px")
+					input(type="hidden", name="email", value=user)
+					button(type="submit") Delete 
